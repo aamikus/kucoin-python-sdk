@@ -7,7 +7,7 @@ import hmac
 import hashlib
 import base64
 import time
-from uuid import uuid1
+from uuid import uuid4
 from urllib.parse import urljoin
 
 
@@ -119,4 +119,4 @@ class KucoinBaseRestApi(object):
 
     @property
     def return_unique_id(self):
-        return ''.join([each for each in str(uuid1()).split('-')])
+        return ''.join([each for each in str(uuid4()).split('-')])
