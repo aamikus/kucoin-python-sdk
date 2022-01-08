@@ -108,7 +108,8 @@ class ConnectWebsocket:
             for task in finished:
                 if task.exception():
                     exception_occur = True
-                    logger.warning("{} got an exception {}".format(task, task.exception()))
+                    logger.exception(f"{task} got an exception:", exc_info=task.exception())
+
                     for pt in pending:
                         logger.warning(f'pending {pt}')
                         try:
